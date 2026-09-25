@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Bilhetes</title>
+</head>
+<body>
+  <noscript><p><a href="login.html">Entrar no Sistema de Bilhetes</a></p></noscript>
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    window.location.replace(Auth.estaAutenticado() ? 'painel.html' : 'login.html');
+  </script>
+</body>
+</html>

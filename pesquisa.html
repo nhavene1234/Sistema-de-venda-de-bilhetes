@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pesquisar viagens | Sistema de Bilhetes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca marca-escura" href="painel.html"><span class="marca-icone"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="15" rx="3"/><path d="M3 11h18"/><circle cx="8" cy="20.5" r="1" fill="currentColor"/><circle cx="16" cy="20.5" r="1" fill="currentColor"/></svg></span><span class="marca-texto"><strong>Sistema de Bilhetes</strong><small>Viagens interprovinciais em Moçambique</small></span></a>
+    <div class="topo-utilizador">
+      <span id="topo-nome"></span>
+      <span class="selo" id="topo-perfil"></span>
+      <a class="botao botao-secundario botao-pequeno" href="painel.html">Início</a>
+      <button type="button" id="sair" class="botao botao-secundario botao-pequeno">Sair</button>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <div id="alerta" role="alert" hidden></div>
+    <h1 id="titulo-pesquisa">Pesquisar viagens</h1>
+    <p class="subtitulo" id="subtitulo-pesquisa">Escolha a origem, o destino e a data da viagem.</p>
+
+    <form id="form-pesquisa" class="pesquisa" novalidate>
+      <div class="campo">
+        <label for="origem">Origem</label>
+        <select id="origem" name="origem" required><option value="">A carregar...</option></select>
+        <p class="erro-campo" data-erro-para="origem" hidden></p>
+      </div>
+      <div class="campo">
+        <label for="destino">Destino</label>
+        <select id="destino" name="destino" required><option value="">A carregar...</option></select>
+        <p class="erro-campo" data-erro-para="destino" hidden></p>
+      </div>
+      <div class="campo">
+        <label for="data">Data</label>
+        <input id="data" name="data" type="date" required>
+        <p class="erro-campo" data-erro-para="data" hidden></p>
+      </div>
+      <button type="submit" class="botao botao-primario">Pesquisar</button>
+    </form>
+
+    <section id="resultados" aria-live="polite" hidden>
+      <h2 id="titulo-resultados"></h2>
+      <div class="viagens" id="lista-viagens"></div>
+    </section>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/topo.js"></script>
+  <script src="js/pesquisa.js"></script>
+</body>
+</html>

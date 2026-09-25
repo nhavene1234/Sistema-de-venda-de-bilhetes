@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel | Sistema de Bilhetes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca marca-escura" href="painel.html"><span class="marca-icone"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="15" rx="3"/><path d="M3 11h18"/><circle cx="8" cy="20.5" r="1" fill="currentColor"/><circle cx="16" cy="20.5" r="1" fill="currentColor"/></svg></span><span class="marca-texto"><strong>Sistema de Bilhetes</strong><small>Viagens interprovinciais em Moçambique</small></span></a>
+    <div class="topo-utilizador">
+      <span id="topo-nome"></span>
+      <span class="selo" id="topo-perfil"></span>
+      <button type="button" id="sair" class="botao botao-secundario botao-pequeno">Sair</button>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <div id="alerta" role="alert" hidden></div>
+    <h1 id="saudacao">Olá</h1>
+    <p class="subtitulo" id="descricao-perfil"></p>
+
+    <section aria-labelledby="titulo-dados">
+      <h2 id="titulo-dados">A sua sessão</h2>
+      <dl class="dados" id="dados-sessao"></dl>
+    </section>
+
+    <section aria-labelledby="titulo-modulos">
+      <h2 id="titulo-modulos">O que pode fazer</h2>
+      <div class="modulos" id="modulos"></div>
+    </section>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/topo.js"></script>
+  <script src="js/painel.js"></script>
+</body>
+</html>

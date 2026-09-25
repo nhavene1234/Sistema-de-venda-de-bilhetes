@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venda presencial | Sistema de Bilhetes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca marca-escura" href="painel.html"><span class="marca-icone"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="15" rx="3"/><path d="M3 11h18"/><circle cx="8" cy="20.5" r="1" fill="currentColor"/><circle cx="16" cy="20.5" r="1" fill="currentColor"/></svg></span><span class="marca-texto"><strong>Sistema de Bilhetes</strong><small>Viagens interprovinciais em Moçambique</small></span></a>
+    <div class="topo-utilizador">
+      <span id="topo-nome"></span>
+      <span class="selo" id="topo-perfil"></span>
+      <a class="botao botao-secundario botao-pequeno" href="painel.html">Início</a>
+      <button type="button" id="sair" class="botao botao-secundario botao-pequeno">Sair</button>
+    </div>
+  </header>
+
+  <main class="conteudo conteudo-estreita">
+    <div id="alerta" role="alert" hidden></div>
+    <h1>Venda presencial</h1>
+    <p class="subtitulo"><span id="lugar-escolhido" class="selo"></span></p>
+
+    <form id="form-venda" class="cartao-formulario" novalidate>
+      <div class="campo">
+        <label for="nomePassageiro">Nome do passageiro</label>
+        <input id="nomePassageiro" name="nomePassageiro" type="text" maxlength="100" required>
+        <p class="erro-campo" data-erro-para="nomePassageiro" hidden></p>
+      </div>
+      <div class="campo">
+        <label for="emailPassageiro">E-mail do passageiro</label>
+        <input id="emailPassageiro" name="emailPassageiro" type="email" required>
+        <p class="erro-campo" data-erro-para="emailPassageiro" hidden></p>
+        <p class="ajuda">Se já tiver conta, a venda fica associada a ela.</p>
+      </div>
+      <div class="campo">
+        <label for="telefonePassageiro">Telefone (opcional)</label>
+        <input id="telefonePassageiro" name="telefonePassageiro" type="tel" maxlength="20">
+      </div>
+      <div class="campo">
+        <span class="rotulo-grupo">Forma de pagamento</span>
+        <div class="opcoes-metodo">
+          <label class="opcao-metodo"><input type="radio" name="metodoPagamento" value="NUMERARIO" required> Numerário</label>
+          <label class="opcao-metodo"><input type="radio" name="metodoPagamento" value="MPESA"> M-Pesa</label>
+          <label class="opcao-metodo"><input type="radio" name="metodoPagamento" value="EMOLA"> e-Mola</label>
+        </div>
+      </div>
+      <button type="submit" class="botao botao-primario">Registar venda</button>
+    </form>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/topo.js"></script>
+  <script src="js/venda.js"></script>
+</body>
+</html>

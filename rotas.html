@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rotas | Sistema de Bilhetes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="marca marca-escura" href="painel.html"><span class="marca-icone"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="15" rx="3"/><path d="M3 11h18"/><circle cx="8" cy="20.5" r="1" fill="currentColor"/><circle cx="16" cy="20.5" r="1" fill="currentColor"/></svg></span><span class="marca-texto"><strong>Sistema de Bilhetes</strong><small>Viagens interprovinciais em Moçambique</small></span></a>
+    <div class="topo-utilizador">
+      <span id="topo-nome"></span>
+      <span class="selo" id="topo-perfil"></span>
+      <a class="botao botao-secundario botao-pequeno" href="painel.html">Início</a>
+      <button type="button" id="sair" class="botao botao-secundario botao-pequeno">Sair</button>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <div id="alerta" role="alert" hidden></div>
+    <div class="cabecalho-secao">
+      <div>
+        <h1>Rotas</h1>
+        <p class="subtitulo">As rotas da sua transportadora.</p>
+      </div>
+      <button type="button" id="nova-rota" class="botao botao-primario botao-largura-auto">Nova rota</button>
+    </div>
+
+    <div id="lista-rotas" class="lista"></div>
+
+    <div id="painel-formulario" class="painel-lateral" hidden>
+      <div class="painel-lateral-caixa">
+        <h2 id="titulo-formulario">Nova rota</h2>
+        <div id="alerta-formulario" role="alert" hidden></div>
+        <form id="form-rota" novalidate>
+          <div class="campo">
+            <label for="origem">Origem</label>
+            <input id="origem" name="origem" type="text" maxlength="60" required>
+            <p class="erro-campo" data-erro-para="origem" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="destino">Destino</label>
+            <input id="destino" name="destino" type="text" maxlength="60" required>
+            <p class="erro-campo" data-erro-para="destino" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="distanciaKm">Distância (km)</label>
+            <input id="distanciaKm" name="distanciaKm" type="number" min="1" step="0.1">
+            <p class="erro-campo" data-erro-para="distanciaKm" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="duracaoEstimada">Duração estimada (minutos)</label>
+            <input id="duracaoEstimada" name="duracaoEstimada" type="number" min="1" step="1">
+            <p class="erro-campo" data-erro-para="duracaoEstimada" hidden></p>
+            <p class="ajuda">Por exemplo, 1050 minutos ≈ 17h30.</p>
+          </div>
+          <div class="acoes-formulario">
+            <button type="button" id="cancelar-edicao" class="botao botao-secundario">Cancelar</button>
+            <button type="submit" class="botao botao-primario">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/topo.js"></script>
+  <script src="js/rotas.js"></script>
+</body>
+</html>
